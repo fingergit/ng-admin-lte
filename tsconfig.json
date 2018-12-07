@@ -16,6 +16,11 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-admin-lte": [
+        "library/ng-admin-lte/src"
+      ]
+    }
   }
 }
