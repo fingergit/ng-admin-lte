@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {DashboardModule} from './pages/dashboard/dashboard.module';
 import {NgAdminLteModule} from 'ng-admin-lte';
+import {AltWidgetsModule} from '../../library/ng-admin-lte/src/lib/alt-widgets/alt-widgets.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {NgAdminLteModule} from 'ng-admin-lte';
     BrowserModule,
     AppRoutingModule,
     DashboardModule,
-    NgAdminLteModule
+    NgAdminLteModule,
+    AltWidgetsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

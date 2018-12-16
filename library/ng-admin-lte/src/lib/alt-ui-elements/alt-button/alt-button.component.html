@@ -1,0 +1,6 @@
+<!--<button type="button" class="btn btn-{{altColor}} btn-{{altSize}}"-->
+        <!--[class.btn-block]="altBlock" [class.disabled]="altDisabled"-->
+<!--&gt;<ng-content></ng-content></button>-->
+<i class="{{altIcon}}" *ngIf="altIcon"></i>
+<ng-container *ngIf="altTitle">{{altTitle}}</ng-container>
+<ng-content></ng-content>

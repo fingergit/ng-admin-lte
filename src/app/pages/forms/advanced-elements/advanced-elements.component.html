@@ -1,166 +1,129 @@
 <!-- SELECT2 EXAMPLE -->
-<div class="box box-default">
-  <div class="box-header with-border">
-    <h3 class="box-title">Select2</h3>
+<alt-box altTitle="Select2" [altCollapsible]="true" [altRemovable]="true" [altHasFooter]="true">
+  <div alt-row="">
+    <div class="col-md-6">
+      <ng-template #selectOptions>
+        <option selected="selected">Alabama</option>
+        <option>Alaska</option>
+        <option>California</option>
+        <option>Delaware</option>
+        <option>Tennessee</option>
+        <option>Texas</option>
+        <option>Washington</option>
+      </ng-template>
+      <div alt-form-select altTitle="Minimal" [altSelect2]="true">
+        <ng-container *ngTemplateOutlet="selectOptions"></ng-container>
+      </div>
+      <div alt-form-select altTitle="Disabled" [altSelect2]="true" [altDisabled]="true">
+        <ng-container *ngTemplateOutlet="selectOptions"></ng-container>
+      </div>
+    </div>
+    <!-- /.col -->
+    <div class="col-md-6">
+      <div alt-form-select altTitle="Multiple" [altSelect2]="true" [altMultiple]="true" altPlaceHolder="Select a State">
+        <option>Alabama</option>
+        <option>Alaska</option>
+        <option>California</option>
+        <option>Delaware</option>
+        <option>Tennessee</option>
+        <option>Texas</option>
+        <option>Washington</option>
+      </div>
+      <div alt-form-select altTitle="Disabled Result" [altSelect2]="true">
+        <option selected="selected">Alabama</option>
+        <option>Alaska</option>
+        <option disabled="disabled">California (disabled)</option>
+        <option>Delaware</option>
+        <option>Tennessee</option>
+        <option>Texas</option>
+        <option>Washington</option>
+      </div>
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
 
-    <div class="box-tools pull-right">
-      <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-      <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
-    </div>
-  </div>
-  <!-- /.box-header -->
-  <div class="box-body">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Minimal</label>
-          <select class="form-control select2" style="width: 100%;">
-            <option selected="selected">Alabama</option>
-            <option>Alaska</option>
-            <option>California</option>
-            <option>Delaware</option>
-            <option>Tennessee</option>
-            <option>Texas</option>
-            <option>Washington</option>
-          </select>
-        </div>
-        <!-- /.form-group -->
-        <div class="form-group">
-          <label>Disabled</label>
-          <select class="form-control select2" disabled="disabled" style="width: 100%;">
-            <option selected="selected">Alabama</option>
-            <option>Alaska</option>
-            <option>California</option>
-            <option>Delaware</option>
-            <option>Tennessee</option>
-            <option>Texas</option>
-            <option>Washington</option>
-          </select>
-        </div>
-        <!-- /.form-group -->
-      </div>
-      <!-- /.col -->
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Multiple</label>
-          <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
-                  style="width: 100%;">
-            <option>Alabama</option>
-            <option>Alaska</option>
-            <option>California</option>
-            <option>Delaware</option>
-            <option>Tennessee</option>
-            <option>Texas</option>
-            <option>Washington</option>
-          </select>
-        </div>
-        <!-- /.form-group -->
-        <div class="form-group">
-          <label>Disabled Result</label>
-          <select class="form-control select2" style="width: 100%;">
-            <option selected="selected">Alabama</option>
-            <option>Alaska</option>
-            <option disabled="disabled">California (disabled)</option>
-            <option>Delaware</option>
-            <option>Tennessee</option>
-            <option>Texas</option>
-            <option>Washington</option>
-          </select>
-        </div>
-        <!-- /.form-group -->
-      </div>
-      <!-- /.col -->
-    </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.box-body -->
-  <div class="box-footer">
+  <ng-container altFooter>
     Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about
     the plugin.
-  </div>
-</div>
+  </ng-container>
+</alt-box>
 <!-- /.box -->
 
-<div class="row">
+<div alt-row>
   <div class="col-md-6">
 
-    <div class="box box-danger">
-      <div class="box-header">
-        <h3 class="box-title">Input masks</h3>
+    <alt-box altColor="danger" altTitle="Input masks">
+      <!-- Date dd/mm/yyyy -->
+      <div alt-form-input [altFormGroup]="false" altTitle="Date masks:" altPreIcon="fa fa-calendar"></div>
+      <div class="form-group">
+        <label>Date masks:</label>
+
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-calendar"></i>
+          </div>
+          <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+        </div>
+        <!-- /.input group -->
       </div>
-      <div class="box-body">
-        <!-- Date dd/mm/yyyy -->
-        <div class="form-group">
-          <label>Date masks:</label>
+      <!-- /.form group -->
 
-          <div class="input-group">
-            <div class="input-group-addon">
-              <i class="fa fa-calendar"></i>
-            </div>
-            <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+      <!-- Date mm/dd/yyyy -->
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-calendar"></i>
           </div>
-          <!-- /.input group -->
+          <input type="text" class="form-control" data-inputmask="'alias': 'mm/dd/yyyy'" data-mask>
         </div>
-        <!-- /.form group -->
-
-        <!-- Date mm/dd/yyyy -->
-        <div class="form-group">
-          <div class="input-group">
-            <div class="input-group-addon">
-              <i class="fa fa-calendar"></i>
-            </div>
-            <input type="text" class="form-control" data-inputmask="'alias': 'mm/dd/yyyy'" data-mask>
-          </div>
-          <!-- /.input group -->
-        </div>
-        <!-- /.form group -->
-
-        <!-- phone mask -->
-        <div class="form-group">
-          <label>US phone mask:</label>
-
-          <div class="input-group">
-            <div class="input-group-addon">
-              <i class="fa fa-phone"></i>
-            </div>
-            <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask>
-          </div>
-          <!-- /.input group -->
-        </div>
-        <!-- /.form group -->
-
-        <!-- phone mask -->
-        <div class="form-group">
-          <label>Intl US phone mask:</label>
-
-          <div class="input-group">
-            <div class="input-group-addon">
-              <i class="fa fa-phone"></i>
-            </div>
-            <input type="text" class="form-control"
-                   data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask>
-          </div>
-          <!-- /.input group -->
-        </div>
-        <!-- /.form group -->
-
-        <!-- IP mask -->
-        <div class="form-group">
-          <label>IP mask:</label>
-
-          <div class="input-group">
-            <div class="input-group-addon">
-              <i class="fa fa-laptop"></i>
-            </div>
-            <input type="text" class="form-control" data-inputmask="'alias': 'ip'" data-mask>
-          </div>
-          <!-- /.input group -->
-        </div>
-        <!-- /.form group -->
-
+        <!-- /.input group -->
       </div>
-      <!-- /.box-body -->
-    </div>
+      <!-- /.form group -->
+
+      <!-- phone mask -->
+      <div class="form-group">
+        <label>US phone mask:</label>
+
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-phone"></i>
+          </div>
+          <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask>
+        </div>
+        <!-- /.input group -->
+      </div>
+      <!-- /.form group -->
+
+      <!-- phone mask -->
+      <div class="form-group">
+        <label>Intl US phone mask:</label>
+
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-phone"></i>
+          </div>
+          <input type="text" class="form-control"
+                 data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask>
+        </div>
+        <!-- /.input group -->
+      </div>
+      <!-- /.form group -->
+
+      <!-- IP mask -->
+      <div class="form-group">
+        <label>IP mask:</label>
+
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-laptop"></i>
+          </div>
+          <input type="text" class="form-control" data-inputmask="'alias': 'ip'" data-mask>
+        </div>
+        <!-- /.input group -->
+      </div>
+      <!-- /.form group -->
+    </alt-box>
     <!-- /.box -->
 
     <div class="box box-info">

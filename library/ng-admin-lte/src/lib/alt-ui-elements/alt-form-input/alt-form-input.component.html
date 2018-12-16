@@ -1,0 +1,38 @@
+<label #labelElem for="{{altId}}" *ngIf="altTitle" [class.col-sm-2]="altHorizontal">
+  <ng-container *ngTemplateOutlet="resultIconTemplate"></ng-container>
+  {{altTitle}}
+</label>
+
+<div [class.col-sm-10]="altHorizontal" *ngIf="altHorizontal; else inputArea">
+  <ng-container *ngTemplateOutlet="inputArea"></ng-container>
+</div>
+
+<ng-template #inputArea>
+  <span class="input-group-addon" *ngIf="hasPre()">
+    <i class="{{_altPreIcon}}" *ngIf="_altPreIcon"></i>
+    <input type="checkbox" *ngIf="_altPreCheckbox">
+    <input type="radio" *ngIf="_altPreRadio">
+    {{_altPre}}</span>
+  <div class="input-group-btn" *ngIf="_altPreButton">
+    <button type="button" class="btn btn-{{_altPreButtonColor}}">{{_altPreButton}}</button>
+  </div>
+
+  <input #inputElem type="{{altType}}" [class.form-control]="altType !== 'file'" id="{{altId}}"
+         placeholder="{{altPlaceHolder}}" [ngClass]="{'input-lg': altSize === 'lg', 'input-sm': altSize === 'sm'}">
+
+  <span class="input-group-addon" *ngIf="hasPost()">
+  <i class="{{_altPostIcon}}" *ngIf="_altPostIcon"></i>{{_altPost}}</span>
+  <ng-container *ngTemplateOutlet="postButtonTemplate"></ng-container>
+
+  <ng-content></ng-content>
+</ng-template>
+
+<ng-template #postButtonTemplate>
+  <div class="input-group-btn" *ngIf="_altPostButton">
+    <button #postButton type="button" class="btn btn-{{_altPostButtonColor}}">{{_altPostButton}}</button>
+  </div>
+</ng-template>
+
+<ng-template #resultIconTemplate>
+  <i #resultIcon class="fa" *ngIf="altInputResult"></i>
+</ng-template>

@@ -1,0 +1,7 @@
+<div class="box-body">
+  <ng-content></ng-content>
+</div>
+<div class="box-footer" ngPreserveWhitespaces *ngIf="!altNoFooter">
+  <button alt-button type="submit" [altColor]="altSubmitColor" *ngIf="altSubmitTitle">{{altSubmitTitle}}</button>
+  <ng-content select="[altFooter]"></ng-content>
+</div>

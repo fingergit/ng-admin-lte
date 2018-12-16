@@ -1,0 +1,15 @@
+<div class="info-box {{fullBkColor}}">
+  <span class="info-box-icon {{bkColor}}"><i class="fa fa-{{_altBoxData.icon}}"></i></span>
+
+  <div class="info-box-content">
+    <span class="info-box-text">{{_altBoxData.text}}</span>
+    <span class="info-box-number">{{_altBoxData.num}}</span>
+
+    <div class="progress" *ngIf="_altBoxData.progress">
+      <div class="progress-bar" style="width: 70%"></div>
+    </div>
+    <span class="progress-description">
+      {{_altBoxData.progressDescription}}
+    </span>
+  </div>
+</div>

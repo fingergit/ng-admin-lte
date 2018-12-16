@@ -1,0 +1,19 @@
+<table class="table table-bordered" [class.table-condensed]="altCondensed" [class.table-bordered]="altBordered"
+  [class.table-striped]="altStriped" [class.table-hover]="altHover">
+  <thead *ngIf="altHeadData">
+    <tr>
+      <th *ngFor="let col of altHeadData.cols" [ngStyle]="col.style" class="{{col.cls}}">{{col.title}}</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="altDataSet">
+    <tr *ngFor="let row of altDataSet">
+      <td *ngFor="let cell of row.displayData">
+        <ng-container *ngIf="cell.template">
+          <ng-container *ngTemplateOutlet="cell.template;context: cell.value"></ng-container>
+        </ng-container>
+        <ng-container *ngIf="!cell.template">{{cell.value}}</ng-container>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

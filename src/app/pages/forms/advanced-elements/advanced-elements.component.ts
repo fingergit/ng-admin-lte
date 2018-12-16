@@ -36,7 +36,7 @@ export class AdvancedElementsComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     // Initialize Select2 Elements
-    $('.select2').select2();
+    // $('.select2').select2();
 
     // Datemask dd/mm/yyyy
     $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });

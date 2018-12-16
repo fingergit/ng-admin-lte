@@ -1,0 +1,14 @@
+<ng-container *ngIf="altHorizontal; else radioTemplate">
+  <div class="col-sm-offset-2 col-sm-10">
+    <div class="radio">
+      <ng-container *ngTemplateOutlet="radioTemplate"></ng-container>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #radioTemplate>
+  <label>
+  <input #radioElem type="radio" name="{{altName}}" value="{{altValue}}">
+  <ng-content></ng-content>
+  </label>
+</ng-template>

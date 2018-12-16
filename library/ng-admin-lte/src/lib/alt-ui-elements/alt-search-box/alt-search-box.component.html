@@ -1,0 +1,8 @@
+<div class="input-group input-group-sm" #searchGroup [ngStyle]="altStyle">
+  <input type="text" class="form-control pull-right" placeholder="{{altPlaceholder}}"
+         [(ngModel)]="altText">
+
+  <div class="input-group-btn">
+    <button type="button" class="btn btn-default" (click)="onSearch()"><i class="fa fa-search"></i></button>
+  </div>
+</div>

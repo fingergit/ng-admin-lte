@@ -1,0 +1,31 @@
+<div class="box box-{{altColor}}" [class.collapsed-box]="altCollapsed"
+     [class.box-solid]="altBoxData.solid">
+  <div class="box-header" [class.with-border]="altWithoutBorder !== true">
+    <ng-container *ngIf="!altCustomHeader">
+      <h3 class="box-title" *ngIf="altTitle">{{altTitle}}</h3>
+      <div class="box-tools pull-right" *ngIf="altCollapsible || altRemovable">
+        <button type="button" class="btn btn-box-tool"
+                [attr.data-widget]="altRemovable ? 'remove': 'collapse'">
+          <i class="fa" [class.fa-times]="altRemovable"></i>
+          <i class="fa" [class.fa-plus]="altCollapsible && altCollapsed"></i>
+          <i class="fa" [class.fa-minus]="altCollapsible && !altCollapsed"></i>
+        </button>
+      </div>
+    </ng-container>
+    <ng-content *ngIf="altCustomHeader" select="[altHeader]"></ng-content>
+    <!-- /.box-tools -->
+  </div>
+  <!-- /.box-header -->
+  <ng-content *ngIf="altCustomBody" select="[customBody]"></ng-content>
+  <div class="box-body" [class.no-padding]="altNoPadding" *ngIf="!altCustomBody">
+    <ng-content></ng-content>
+  </div>
+  <!-- /.box-body -->
+  <div class="box-footer {{altFooterClass}}" *ngIf="altHasFooter">
+    <ng-content select="[altFooter]"></ng-content>
+  </div>
+  <div class="overlay" *ngIf="altLoading">
+    <i class="fa fa-refresh fa-spin"></i>
+  </div>
+</div>
+<!-- /.box -->

@@ -1,0 +1,17 @@
+<div class="small-box bg-{{altBoxData.color}}">
+  <div class="inner">
+    <h3>{{altBoxData.num}}</h3>
+    <p>{{altBoxData.text}}</p>
+  </div>
+  <div class="icon">
+    <i class="{{altBoxData.icon}}"></i>
+  </div>
+  <a *ngIf="altBoxData.linkExtUrl" [attr.href]="altBoxData.linkExtUrl"
+     class="small-box-footer">
+    {{altBoxData.linkText}} <i class="fa fa-arrow-circle-right"></i>
+  </a>
+  <a *ngIf="altBoxData.routerLink" [routerLink]="altBoxData.routerLink"
+     class="small-box-footer">
+    {{altBoxData.linkText}} <i class="fa fa-arrow-circle-right"></i>
+  </a>
+</div>
